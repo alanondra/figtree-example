@@ -38,9 +38,9 @@ use Carbon\{
 use Twig\Environment;
 
 $globals = [
-	'APP_NAME' => env('APP_NAME'),
-	'APP_ENV' => env('APP_ENV'),
-	'APP_DEBUG' => !!env('APP_DEBUG'),
+	'APP_NAME' => get('app.name'),
+	'APP_DEBUG' => get('app.debug'),
+	'APP_ENV' => get('app.env'),
 	'NOW' => create(Carbon::class)
 		->constructor(null, get(CarbonTimeZone::class)),
 	

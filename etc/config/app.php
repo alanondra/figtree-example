@@ -25,6 +25,8 @@ use FigTree\Framework\Support\Evaluator;
 use App\Config\ConfigFactory;
 
 return [
+	'app.name' => env('APP_NAME', 'Example Website'),
+
 	'app.debug' => !!env('APP_DEBUG', false),
 
 	'app.env' => !!env('APP_ENV', 'dev'),
