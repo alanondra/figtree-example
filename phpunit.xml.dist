@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" colors="true" convertDeprecationsToExceptions="true" convertErrorsToExceptions="true" convertNoticesToExceptions="true" convertWarningsToExceptions="true" printerClass="FigTree\Config\Tests\TestPrinter" failOnRisky="true" failOnWarning="true" beStrictAboutChangesToGlobalState="true" beStrictAboutOutputDuringTests="true" beStrictAboutResourceUsageDuringSmallTests="true" beStrictAboutTodoAnnotatedTests="true" verbose="true" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
+	<testsuites>
+		<testsuite name="App Test Suite">
+			<directory suffix="Test.php">tests</directory>
+		</testsuite>
+	</testsuites>
+	<coverage processUncoveredFiles="true">
+		<include>
+			<directory suffix=".php">src</directory>
+		</include>
+	</coverage>
+</phpunit>

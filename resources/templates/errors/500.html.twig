@@ -1,0 +1,15 @@
+{% extends "layouts/main.html.twig" %}
+
+{% block title %}Server Error - {{ parent() }}{% endblock %}
+
+{% block main %}
+			<section class="container 500 error-page">
+				<h2>Server Error</h2>
+				<p>
+					Something went wrong.
+				</p>
+				{% if APP_DEBUG %}
+				<pre class="error-message">{{ error }}</pre>
+				{% endif %}
+			</section>
+{% endblock %}

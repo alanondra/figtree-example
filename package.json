@@ -1,0 +1,29 @@
+{
+	"name": "@alanondra/figtree-example",
+	"private": true,
+	"scripts": {
+		"dev": "webpack --config webpack.config.js --mode development",
+		"watch": "webpack --config webpack.config.js --mode development --watch",
+		"prod": "webpack --config webpack.config.js --mode production"
+	},
+	"dependencies": {
+		"@fortawesome/fontawesome-free": "^5.15.3",
+		"@popperjs/core": "^2.9.2",
+		"autoprefixer": "^10.2.5",
+		"axios": "^0.21.1",
+		"bootstrap": "^5.0.0-beta3",
+		"clean-css": "^5.1.2",
+		"cross-env": "^7.0.3",
+		"css-loader": "^5.2.3",
+		"jquery": "^3.6.0",
+		"lodash": "^4.17.21",
+		"mini-css-extract-plugin": "^1.5.0",
+		"postcss-loader": "^5.2.0",
+		"remove-files-webpack-plugin": "^1.4.4",
+		"resolve-url-loader": "^3.1.2",
+		"sass": "^1.32.10",
+		"sass-loader": "^11.0.1",
+		"webpack": "^5.34.0",
+		"webpack-cli": "^4.6.0"
+	}
+}

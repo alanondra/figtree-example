@@ -1,0 +1,30 @@
+@import 'vendor';
+
+html {
+	display: flex;
+	flex-flow: row nowrap;
+	height: 100%;
+}
+body {
+	display: flex;
+	flex-flow: column nowrap;
+	flex-grow: 1;
+	min-height: 100%;
+}
+main {
+	display: flex;
+	flex-flow: column nowrap;
+	flex-grow: 1;
+}
+
+section.error-page {
+	padding: 1rem 0;
+
+	pre.error-message {
+		background: $light;
+		border: $border-width solid $border-color;
+		border-radius: $border-radius;
+		box-sizing: border-box;
+		padding: $table-cell-padding-y $table-cell-padding-x;
+	}
+}
