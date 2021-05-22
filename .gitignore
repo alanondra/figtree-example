@@ -1,7 +1,7 @@
 .vscode/
 node_modules/
 public/assets/build/
-vendor/
+./vendor/
 .env
 .phpcs-cache
 .phpunit.result.cache
