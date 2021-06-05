@@ -1,0 +1,43 @@
+FROM php:8.0-fpm-alpine
+
+ARG APP_ENV=dev
+
+# select base configuration
+RUN if [ "$APP_ENV" = "production" ]; then \
+        cp "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"; \
+    else \
+        cp "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"; \
+    fi;
+
+# install binary dependencies
+RUN apk add --update --no-cache \
+    coreutils \
+    autoconf \
+    gettext \
+    make \
+    gcc \
+    g++ \
+    git \
+    curl \
+    curl-dev \
+    icu-dev \
+    libcurl \
+    libzip-dev
+
+# install PHP extensions
+RUN docker-php-ext-install \
+    opcache
+
+RUN pecl install redis-5.3.4 && \
+    docker-php-ext-enable redis
+
+# copy Composer
+COPY --from=composer /usr/bin/composer /usr/local/bin/composer
+
+# run on container boot
+CMD if [ "$APP_ENV" = "production" ]; then \
+        composer --no-dev -o install; \
+    else \
+        composer install; \
+    fi; \
+    php-fpm
