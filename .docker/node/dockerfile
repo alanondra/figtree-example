@@ -2,7 +2,7 @@ FROM node:16-alpine
 
 CMD npm --no-update-notifier install; \
     if [ "$NODE_ENV" = "production" ]; then \
-        npm --no-update-notifier install; \
+        npm --no-update-notifier --production install; \
         npm --no-update-notifier run prod; \
     else \
         npm --no-update-notifier install; \
