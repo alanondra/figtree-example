@@ -2,11 +2,16 @@ FROM php:8.0-fpm-alpine
 
 ARG APP_ENV=dev
 
+COPY .docker/php/etc/local.ini-production $PHP_INI_DIR/conf.d/local.ini-production
+COPY .docker/php/etc/local.ini-production $PHP_INI_DIR/conf.d/local.ini-development
+
 # select base configuration
 RUN if [ "$APP_ENV" = "production" ]; then \
         cp "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"; \
+        cp "$PHP_INI_DIR/conf.d/local.ini-production" "$PHP_INI_DIR/conf.d/local-production.ini"; \
     else \
         cp "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"; \
+        cp "$PHP_INI_DIR/conf.d/local.ini-development" "$PHP_INI_DIR/conf.d/local-development.ini"; \
     fi;
 
 # install binary dependencies
